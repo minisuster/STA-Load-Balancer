@@ -16,15 +16,40 @@ export default class LoadBalancer {
   }
 
   async onRequestArrival(request, sendToServer) {
+
+
+
     // Ejemplo de la petición que llega:
     // {
     //   id: "request-17",
     //   payload: "08319462", // Datos que envía el cliente
     //   work: 4              // Unidades de trabajo necesarias
     // }
-    const server = this.servers[0];
+    const server1 = this.servers[0];
+    const server2 = this.servers[1];
+    const server3 = this.servers[2];
+    const server4 = this.servers[3];
+
 
     // Envía la petición al servidor y devuelve su respuesta al cliente.
-    return sendToServer(server.id);
+    return sendToServer(server1.id);
+    return sendToServer(server2.id);
+    return sendToServer(server3.id);
+    return sendToServer(server4.id);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
