@@ -13,9 +13,11 @@ export default class LoadBalancer {
     // }
     // Los datos son de solo lectura y se actualizan durante la simulación.
     this.servers = Object.freeze([...servers]);
+    this.next = 0;
   }
 
   async onRequestArrival(request, sendToServer) {
+    const server = this.server[this.next];
 
 
 
@@ -25,17 +27,27 @@ export default class LoadBalancer {
     //   payload: "08319462", // Datos que envía el cliente
     //   work: 4              // Unidades de trabajo necesarias
     // }
-    const server1 = this.servers[0];
-    const server2 = this.servers[1];
-    const server3 = this.servers[2];
-    const server4 = this.servers[3];
+    const Servidor1 = this.servers[0].power;
+    const Servidor2 = this.servers[1].power;
+    const Servidor3 = this.servers[2].power;
+    const Servidor4 = this.servers[3].power;
+
+    const trabajoPaquete = this.request.work;
+
+    const dividir1 = trabajoPaquete / Servidor1 ;
+    const dividir2 = trabajoPaquete / Servidor2;
+    const dividir3 = trabajoPaquete / Servidor3;
+    const dividir4 = trabajoPaquete / Servidor4;
+
+    // dividimos para ver donde me va a costar menos y lo ponemos en un array
+    const tiempos = []
 
 
-    // Envía la petición al servidor y devuelve su respuesta al cliente.
-    return sendToServer(server1.id);
-    return sendToServer(server2.id);
-    return sendToServer(server3.id);
-    return sendToServer(server4.id);
+    if ((dividir1 > dividir2) ) {
+
+      
+      
+    }
   }
 
 
