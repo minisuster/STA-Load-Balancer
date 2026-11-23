@@ -20,6 +20,43 @@ export default class LoadBalancer {
     const server = this.server[this.next];
 
 
+    const Cola1 = this.servers[0].queuedRequests;
+    const Cola2 = this.servers[1].queuedRequests;
+    const Cola3 = this.servers[2].queuedRequests;
+    const Cola4 = this.servers[3].queuedRequests;
+
+
+    if (Cola1 === null) {
+
+      server = 0:
+      
+    }
+
+    if (Cola2 === null) {
+
+      server = 1:
+      
+    }
+
+    if (Cola3 === null) {
+
+      server = 3:
+      
+    }
+
+    if (Cola4 === null) {
+
+      server= 4:
+      
+    }
+
+
+
+
+
+    return sendToServer(server.id);
+    
+
 
     // Ejemplo de la petición que llega:
     // {
@@ -27,27 +64,8 @@ export default class LoadBalancer {
     //   payload: "08319462", // Datos que envía el cliente
     //   work: 4              // Unidades de trabajo necesarias
     // }
-    const Servidor1 = this.servers[0].power;
-    const Servidor2 = this.servers[1].power;
-    const Servidor3 = this.servers[2].power;
-    const Servidor4 = this.servers[3].power;
 
-    const trabajoPaquete = this.request.work;
-
-    const dividir1 = trabajoPaquete / Servidor1 ;
-    const dividir2 = trabajoPaquete / Servidor2;
-    const dividir3 = trabajoPaquete / Servidor3;
-    const dividir4 = trabajoPaquete / Servidor4;
-
-    // dividimos para ver donde me va a costar menos y lo ponemos en un array
-    const tiempos = []
-
-
-    if ((dividir1 > dividir2) ) {
-
-      
-      
-    }
+  
   }
 
 
